@@ -1,24 +1,24 @@
 class Calculator:
-    def __init__(self, num1, num2):
+    def __init__(self):
+        self.memory = 0
         
-        self.num1 = num1
-        self.num2 = num2
+        
 
-    def addition(self):
-        self. total = self.num1 + self.num2
+    def addition(self, num1, num2):
+        self. total = num1 + num2
         return self.total
     
-    def subtraction(self):
-        self.total = self.num1 - self.num2
+    def subtraction(self, num1, num2):
+        self.total = num1 - num2
         return self.total
     
-    def multiplication(self):
-        self.total = self.num1 * self.num2
+    def multiplication(self, num1, num2):
+        self.total = num1 * num2
         return self.total
 
 
         
-    def get_userinput(self):
+    def get_userinput(self, ):
         self.num1 = int(
             input("enter first number: ")
         )
@@ -32,7 +32,13 @@ class Calculator:
         )
     
         if self.message == "+":
-            return self.addition
+            return self.addition(self.num1, self.num2)
+        elif self.message == "-":
+            return self.subtraction(self.num1, self.num2)
+        elif self.message == "*":
+            return self.multiplication(self.num1, self.num2)
+        else:
+            return "invalid user choice"
 
 
 
